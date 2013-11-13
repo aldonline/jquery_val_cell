@@ -1,9 +1,12 @@
+rcell      = require 'reactive-cell'
+bidibinder = require 'bidibinder'
+reactivity = require 'reactivity'
+
 ###
 Returns a cell with a _destroy() method to disconnect it
 from the target element
-Dependencies are injected, not required.
 ###
-module.exports = ( {$e, bidibinder, rcell, reactivity} ) ->
+module.exports = ( $e ) ->
   
   # we have an element $e on the left
   # and a cell on the right

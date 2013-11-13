@@ -4,15 +4,13 @@ $      = require 'jquery'
 
 X      = require '../lib'
 
-rcell      = require 'reactive-cell'
-bidibinder = require 'bidibinder'
-reactivity = require 'reactivity'
+
 
 
 describe 'jquery.val() cell', ->
   it 'should work with <input type="text">', ->
     $e = $('<input>').attr type: 'text'
-    c = X { $e, rcell, bidibinder, reactivity }
+    c = X $e
 
     $e.val().should.equal ''
     c().should.equal ''
@@ -35,7 +33,7 @@ describe 'jquery.val() cell', ->
 
   it 'should work with <input type="checkbox">', ->
     $e = $('<input>').attr type: 'checkbox'
-    c = X { $e, rcell, bidibinder, reactivity }
+    c = X $e
 
     $e.val().should.equal ''
     c().should.equal ''
